@@ -1,0 +1,32 @@
+{
+  "name": "zemael-blog-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "dev": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinchods93/zemael-blog-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tinchods93/zemael-blog-backend/issues"
+  },
+  "homepage": "https://github.com/tinchods93/zemael-blog-backend#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.3.3",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
+  }
+}
