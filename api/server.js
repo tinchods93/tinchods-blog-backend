@@ -2,10 +2,10 @@ const express = require('express');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const path = require('path');
-const apiConfig = require('./config/api.config');
+const {basePath} = require('./config/api.config');
 const database = require('./database/db');
 /* Routers */
-const userRouter = require('./routes/users.routes');
+const authRouter = require('./routes/auth.routes');
 //DB
 database.connect();
 //Express config
@@ -25,14 +25,14 @@ app.use(morgan('tiny'));
 app.use(methodOverride('_method'));
 
 
-
 /* Routes */
-app.use(`/${apiConfig.basePath}/auth`, userRouter);
+app.use(`/${basePath}/auth`, authRouter);
 
 //Start server
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`El servidor esta corriendo en el puerto: ${PORT}.`);
+  console.log(`basePath: /${basePath}/`)
 });
 
 module.exports = { app };
