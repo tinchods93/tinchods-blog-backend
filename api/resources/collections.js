@@ -1,13 +1,16 @@
 //Nombre de las colecciones
 
+const constants = require('../commons/constants');
 const { stackPrefix } = require('../config/api.config');
 
 const names = {
-  USERS: 'users-:stackPrefix-tables',
-  SESSIONS: 'sessions-:stackPrefix-tables',
-  POSTS: 'posts-:stackPrefix-tables',
-  CATEGORIES: 'categories-:stackPrefix-tables',
-  COMMENTS: 'comments-:stackPrefix-tables',
+  [constants.USERS]: 'users-:stackPrefix-tables',
+  [constants.SESSIONS]: 'sessions-:stackPrefix-tables',
+  [constants.POSTS]: 'posts-:stackPrefix-tables',
+  [constants.CATEGORIES]: 'categories-:stackPrefix-tables',
+  [constants.COMMENTS]: 'comments-:stackPrefix-tables',
+  [constants.ROLES]: 'roles-:stackPrefix-tables',
+  [constants.REFRESH_TOKEN]: 'refreshToken-:stackPrefix-tables'
 };
 
 module.exports = (collection) => {

@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const collections = require('../resources/collections');
+const constants = require('../commons/constants');
 
 const UserSchema = new Schema(
   {
@@ -10,19 +11,16 @@ const UserSchema = new Schema(
       type: String,
       lowercase: true,
     },
-    password: {
+    password: String,
+    creation_date: String,
+    roles: [{
       type: String,
-    },
-    role: {
-      type: String,
-      default: "user"
-    },
+      ref: collections(constants.ROLES),
+    }],
   },
   {
-    versionKey: false,
     _id: false,
   }
 );
 
-
-module.exports = model(collections("USERS"), UserSchema);
+module.exports = model(collections(constants.USERS), UserSchema);
